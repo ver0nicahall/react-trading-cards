@@ -67,6 +67,7 @@ function TradingCard(props) {
 }
 
 function TradingCardContainer() {
+  
   return (
     <div>
       Test

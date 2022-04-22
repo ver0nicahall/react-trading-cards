@@ -51,11 +51,6 @@ const tradingCardData = [
   },
 ];
 
-for (let tradingCard of tradingCardData) {
-  console.log(tradingCard['name']);
-  console.log(tradingCard['skill']);
-}
-
 function TradingCard(props) {
   return (
     <div className="card">
@@ -67,11 +62,21 @@ function TradingCard(props) {
 }
 
 function TradingCardContainer() {
-  
+  const tradingCards = [];
+
+  for (const currentCard of tradingCardData) {
+    tradingCards.push(
+    <TradingCard 
+      name={currentCard.name} 
+      skill={currentCard.skill} 
+      imgUrl={currentCard.imgUrl} 
+    />);
+  }
+
   return (
-    <div>
-      Test
-    </div>
+    <React.Fragment>
+      {tradingCards}
+    </React.Fragment>
   );
 }
 
